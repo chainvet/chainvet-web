@@ -1,3 +1,7 @@
+// Base URL of the chainvet-server API. Override by setting
+// window.CHAINVET_API_BASE before this script loads.
+const API_BASE = ((typeof window !== "undefined" && window.CHAINVET_API_BASE) || "http://127.0.0.1:8080").replace(/\/+$/, "");
+
 const state = {
   currentPath: "",
   selectedPath: "",
@@ -354,7 +358,7 @@ function renderEntries() {
 
 async function loadFiles(path = "") {
   setStatus("Loading workspace entries...");
-  const response = await fetch(`/api/files?path=${encodeURIComponent(path)}`);
+  const response = await fetch(`${API_BASE}/api/files?path=${encodeURIComponent(path)}`);
   const payload = await response.json();
   if (!response.ok) {
     throw new Error(payload.error || "Failed to load workspace entries");
@@ -380,7 +384,7 @@ async function loadFiles(path = "") {
 
 async function loadPreview(path) {
   try {
-    const response = await fetch(`/api/file?path=${encodeURIComponent(path)}`);
+    const response = await fetch(`${API_BASE}/api/file?path=${encodeURIComponent(path)}`);
     const payload = await response.json();
     if (!response.ok) {
       throw new Error(payload.error || "Failed to load file preview");
@@ -706,7 +710,7 @@ function applyFindingFilter() {
 }
 
 async function fetchAnalysisStatus() {
-  const response = await fetch("/api/analyze/status");
+  const response = await fetch(API_BASE + "/api/analyze/status");
   const payload = await response.json();
   if (!response.ok) {
     throw new Error(payload.error || "Failed to load analysis status");
@@ -909,7 +913,7 @@ async function cancelAnalysis() {
   );
 
   try {
-    const response = await fetch("/api/analyze/cancel", {
+    const response = await fetch(API_BASE + "/api/analyze/cancel", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
     });
@@ -936,7 +940,7 @@ async function runAnalysis() {
   startRunTimer(modeSelect.value, targetPath || ".");
 
   try {
-    const response = await fetch("/api/analyze", {
+    const response = await fetch(API_BASE + "/api/analyze", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
