@@ -1,11 +1,11 @@
-# ChainVet Web
+# Chainvet Web
 
-A static web UI for [ChainVet](https://github.com/chainvet/chainvet) that talks to
+A static web UI for [Chainvet](https://github.com/chainvet/chainvet) that talks to
 a running `chainvet-server` over its HTTP API (file browser + analyze + progress).
 
 ## Run
 
-1. Start the API server from the ChainVet workspace (listens on `127.0.0.1:8080`):
+1. Start the API server from the Chainvet workspace (listens on `127.0.0.1:8080`):
 
    ```bash
    CHAINVET_SERVER_ROOT=/path/to/your/contracts chainvet-server
