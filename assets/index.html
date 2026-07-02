@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Smart Contracts Analyzer</title>
+    <title>Chainvet — Solidity Security Analyzer</title>
+    <link href="/favicon.ico" rel="icon" sizes="any">
+    <link href="/logo.svg" rel="icon" type="image/svg+xml">
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
@@ -82,8 +84,14 @@
   <body class="bg-surface text-on-surface font-body selection:bg-primary/30">
     <div class="flex h-screen overflow-hidden">
       <aside id="workspacePanel" class="w-[22rem] bg-surface-container-low flex flex-col h-screen py-4 border-r-0 z-20 shrink-0">
-        <div class="px-6 mb-8">
-          <h1 class="font-headline font-bold text-primary tracking-tight text-xl">Workspace</h1>
+        <div class="px-6 pt-1 mb-7">
+          <div class="flex items-center gap-2.5">
+            <img alt="Chainvet" class="h-8 w-auto shrink-0" src="/logo.svg">
+            <span class="font-headline font-bold text-xl tracking-tight text-on-surface">Chainvet</span>
+          </div>
+        </div>
+        <div class="px-6 mb-7">
+          <h2 class="font-headline font-bold text-primary tracking-wider text-sm uppercase">Workspace</h2>
           <p class="text-[10px] text-on-surface-variant/50 font-mono mt-1">select a file or folder target</p>
         </div>
 
@@ -100,8 +108,8 @@
       <main class="flex-1 flex flex-col overflow-hidden">
         <header class="bg-surface-container-low text-on-surface flex justify-between items-center w-full px-6 py-4 shrink-0 gap-4">
           <div class="min-w-0">
-            <p class="text-lg font-headline font-bold text-[#e3e0f7] tracking-tight">Smart Contracts Analyzer</p>
-            <p class="text-[11px] text-on-surface-variant font-mono">local Solidity security analysis</p>
+            <p class="text-lg font-headline font-bold text-[#e3e0f7] tracking-tight">Analyzer</p>
+            <p class="text-[11px] text-on-surface-variant font-mono">hybrid Solidity security analysis</p>
           </div>
           <div id="rootDirHeader" class="hidden lg:flex items-center gap-2 bg-surface-container rounded-full px-3 py-2 max-w-[40rem]">
             <span class="material-symbols-outlined text-xs text-secondary">folder</span>

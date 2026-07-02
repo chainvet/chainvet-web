@@ -630,7 +630,7 @@ function renderFindings(findings) {
         ].filter(Boolean).join(" · ");
 
         return `
-          <div class="${tone.card}">
+          <div class="finding-card ${tone.card}">
             <div class="flex justify-between items-start mb-4 gap-3">
               <span class="px-2 py-1 ${tone.chip} rounded text-[10px] font-bold uppercase">${escapeHtml(titleCaseToken(finding.kind))}</span>
               ${

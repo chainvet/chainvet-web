@@ -583,14 +583,25 @@ body {
   border-bottom: 2px solid rgba(148, 208, 144, 0.5);
 }
 
+/* Keep long tokens (kinds, function names, file:offset spans, messages) inside
+   the card. `overflow-wrap` is inherited, so setting it here reaches the flex
+   text nodes; `anywhere` also lets the grid/flex items shrink below content. */
+.finding-card {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
 .finding-card-detail {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5rem;
+  min-width: 0;
 }
 
 .finding-card-detail .material-symbols-outlined {
   font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
 }
 
 .results-empty {
